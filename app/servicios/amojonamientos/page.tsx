@@ -4,7 +4,8 @@ import { Footer } from '@/components/footer'
 import { ServiceHero } from '@/components/service-page/service-hero'
 import { ServiceBenefits } from '@/components/service-page/service-benefits'
 import { ServiceForm } from '@/components/service-page/service-form'
-import { PlanosViewer } from '@/components/service-page/planos-viewer'
+import { PlanosViewerDB } from '@/components/service-page/planos-viewer-db'
+import { ServicePhotosGallery } from '@/components/service-page/service-photos'
 import { getServicioBySlug } from '@/lib/servicios-data'
 
 export const metadata: Metadata = {
@@ -34,9 +35,11 @@ export default function AmojonamientosPage() {
 
       <ServiceBenefits benefits={servicio.benefits} />
 
-      <ServiceForm servicio={servicio.slug} title={servicio.title} />
+      <ServicePhotosGallery servicio="amojonamientos" />
 
-      <PlanosViewer planos={servicio.planos} />
+      <PlanosViewerDB servicio="amojonamientos" />
+
+      <ServiceForm servicio={servicio.slug} title={servicio.title} />
 
       <Footer />
     </main>
