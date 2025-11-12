@@ -1,19 +1,50 @@
-<!-- Placeholder para Topografía -->
+<!-- Topografía - Imagen con GPS y señales -->
 <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    <linearGradient id="topoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c2d12;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ea580c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fb923c;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#grad5)"/>
-  <text x="50%" y="40%" font-family="Arial, sans-serif" font-size="72" fill="white" text-anchor="middle" font-weight="bold">
-    Topografía Integral
+  
+  <!-- Fondo degradado -->
+  <rect width="1200" height="800" fill="url(#topoGrad)"/>
+  
+  <!-- Ilustración de GPS/Satélite -->
+  <g transform="translate(900, 350)" opacity="0.2">
+    <circle cx="0" cy="0" r="50" fill="white"/>
+    <circle cx="0" cy="0" r="35" fill="none" stroke="white" stroke-width="4"/>
+    <!-- Ondas de señal -->
+    <path d="M -80,-80 Q -60,-60 -50,-40" fill="none" stroke="white" stroke-width="4"/>
+    <path d="M 80,-80 Q 60,-60 50,-40" fill="none" stroke="white" stroke-width="4"/>
+    <path d="M -100,-100 Q -75,-75 -60,-50" fill="none" stroke="white" stroke-width="3" opacity="0.7"/>
+    <path d="M 100,-100 Q 75,-75 60,-50" fill="none" stroke="white" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Elementos de señal GPS -->
+  <g transform="translate(200, 200)" opacity="0.15">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="white" stroke-width="3"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="white" stroke-width="2"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="white" stroke-width="1"/>
+    <circle cx="0" cy="0" r="10" fill="white"/>
+  </g>
+  
+  <!-- Textos -->
+  <text x="80" y="370" font-family="Arial, sans-serif" font-size="82" fill="white" font-weight="bold">
+    Topografía
   </text>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="36" fill="white" text-anchor="middle" opacity="0.9">
+  <text x="80" y="460" font-family="Arial, sans-serif" font-size="82" fill="white" font-weight="bold">
+    Integral
+  </text>
+  <text x="80" y="540" font-family="Arial, sans-serif" font-size="44" fill="white" opacity="0.95">
     Tecnología GPS RTK
   </text>
-  <text x="50%" y="60%" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" opacity="0.7">
-    🛰️ GPS de Última Generación | 📡 Estación Total | 🎯 Precisión cm
-  </text>
+  
+  <!-- Íconos de características -->
+  <g transform="translate(80, 630)">
+    <text font-family="Arial, sans-serif" font-size="26" fill="white" opacity="0.9">
+      🛰️ GPS de Última Generación   •   📡 Estación Total   •   🎯 Precisión cm
+    </text>
+  </g>
 </svg>
