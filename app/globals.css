@@ -124,3 +124,6 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Uploadthing Styles */
+@import "@uploadthing/react/styles.css";

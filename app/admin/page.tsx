@@ -142,22 +142,25 @@ export default function AdminPage() {
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="photo-upload">Archivo</Label>
-                  <UploadButton
-                    endpoint="servicePhotos"
-                    onClientUploadComplete={(res: any) => {
-                      if (res?.[0]?.url) {
-                        setPhotoUrl(res[0].url);
-                        alert("Imagen subida exitosamente!");
-                      }
-                    }}
-                    onUploadError={(error: Error) => {
-                      alert(`Error: ${error.message}`);
-                    }}
-                  />
+                  <div className="mt-2">
+                    <UploadButton
+                      endpoint="servicePhotos"
+                      onClientUploadComplete={(res: any) => {
+                        if (res?.[0]?.url) {
+                          setPhotoUrl(res[0].url);
+                          alert("Imagen subida exitosamente!");
+                        }
+                      }}
+                      onUploadError={(error: Error) => {
+                        alert(`Error: ${error.message}`);
+                      }}
+                    />
+                  </div>
                   {photoUrl && (
-                    <p className="text-sm text-green-600 mt-2">
-                      URL: {photoUrl}
-                    </p>
+                    <div className="mt-2">
+                      <p className="text-sm text-green-600">✓ Imagen subida</p>
+                      <p className="text-xs text-gray-500 truncate">{photoUrl}</p>
+                    </div>
                   )}
                 </div>
 
@@ -200,22 +203,27 @@ export default function AdminPage() {
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="plano-upload">Archivo (PDF o Imagen)</Label>
-                  <UploadButton
-                    endpoint="planos"
-                    onClientUploadComplete={(res: any) => {
-                      if (res?.[0]?.url) {
-                        setPlanoUrl(res[0].url);
-                        const ext = res[0].url.split(".").pop()?.toLowerCase();
-                        setPlanoType(ext === "pdf" ? "pdf" : "image");
-                        alert("Plano subido exitosamente!");
-                      }
-                    }}
-                    onUploadError={(error: Error) => {
-                      alert(`Error: ${error.message}`);
-                    }}
-                  />
+                  <div className="mt-2">
+                    <UploadButton
+                      endpoint="planos"
+                      onClientUploadComplete={(res: any) => {
+                        if (res?.[0]?.url) {
+                          setPlanoUrl(res[0].url);
+                          const ext = res[0].url.split(".").pop()?.toLowerCase();
+                          setPlanoType(ext === "pdf" ? "pdf" : "image");
+                          alert("Plano subido exitosamente!");
+                        }
+                      }}
+                      onUploadError={(error: Error) => {
+                        alert(`Error: ${error.message}`);
+                      }}
+                    />
+                  </div>
                   {planoUrl && (
-                    <p className="text-sm text-green-600 mt-2">URL: {planoUrl}</p>
+                    <div className="mt-2">
+                      <p className="text-sm text-green-600">✓ Archivo subido</p>
+                      <p className="text-xs text-gray-500 truncate">{planoUrl}</p>
+                    </div>
                   )}
                 </div>
 
