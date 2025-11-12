@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { UploadButton } from "@/lib/uploadthing";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AdminAuth } from "@/components/admin-auth";
 
 const servicios = [
   { slug: "mensura", nombre: "Mensuras" },
@@ -102,21 +103,22 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Panel de Administración
-        </h1>
+    <AdminAuth>
+      <div className="min-h-screen bg-gray-50 py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-8">
+            Gestión de Contenido
+          </h1>
 
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle>Seleccionar Servicio</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Select value={selectedServicio} onValueChange={setSelectedServicio}>
-              <SelectTrigger>
-                <SelectValue placeholder="Selecciona un servicio" />
-              </SelectTrigger>
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle>Seleccionar Servicio</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Select value={selectedServicio} onValueChange={setSelectedServicio}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Selecciona un servicio" />
+                </SelectTrigger>
               <SelectContent>
                 {servicios.map((servicio) => (
                   <SelectItem key={servicio.slug} value={servicio.slug}>
@@ -260,5 +262,6 @@ export default function AdminPage() {
         </Tabs>
       </div>
     </div>
+    </AdminAuth>
   );
 }
