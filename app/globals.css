@@ -126,5 +126,4 @@
 }
 
 /* Uploadthing Styles */
-/* @import "@uploadthing/react/styles.css"; */
-/* Los estilos de uploadthing v7 están incluidos automáticamente */
+@import "@uploadthing/react/styles.css";
