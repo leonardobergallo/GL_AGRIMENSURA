@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 
 export function Header() {
@@ -31,14 +32,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">GL</span>
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div className="relative w-24 h-24 md:w-28 md:h-28">
+            <Image
+              src="/logoGeoSudFix.png"
+              alt="Geo Sud Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-primary">GL_AGRIMENSURA</h1>
-            <p className="text-xs text-muted-foreground">Gabriel Lucero</p>
+            <p className="text-sm font-medium text-muted-foreground">Gabriel Lucero</p>
           </div>
         </Link>
 
