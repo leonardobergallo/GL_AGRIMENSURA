@@ -1,0 +1,48 @@
+<!-- Subdivisión - Imagen con terreno dividido -->
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="subdivGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b91c1c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f87171;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo degradado -->
+  <rect width="1200" height="800" fill="url(#subdivGrad)"/>
+  
+  <!-- Ilustración de terreno dividido -->
+  <g transform="translate(750, 300)" opacity="0.2">
+    <rect x="0" y="0" width="180" height="180" fill="none" stroke="white" stroke-width="6"/>
+    <line x1="90" y1="0" x2="90" y2="180" stroke="white" stroke-width="6"/>
+    <line x1="0" y1="90" x2="180" y2="90" stroke="white" stroke-width="6"/>
+    <!-- Etiquetas de lotes -->
+    <text x="45" y="50" font-family="Arial" font-size="20" fill="white" text-anchor="middle">LOTE 1</text>
+    <text x="135" y="50" font-family="Arial" font-size="20" fill="white" text-anchor="middle">LOTE 2</text>
+    <text x="45" y="140" font-family="Arial" font-size="20" fill="white" text-anchor="middle">LOTE 3</text>
+    <text x="135" y="140" font-family="Arial" font-size="20" fill="white" text-anchor="middle">LOTE 4</text>
+  </g>
+  
+  <!-- Elementos decorativos -->
+  <circle cx="200" cy="250" r="70" fill="none" stroke="white" stroke-width="3" opacity="0.12"/>
+  <line x1="200" y1="180" x2="200" y2="320" stroke="white" stroke-width="3" opacity="0.12"/>
+  <line x1="130" y1="250" x2="270" y2="250" stroke="white" stroke-width="3" opacity="0.12"/>
+  
+  <!-- Textos -->
+  <text x="80" y="380" font-family="Arial, sans-serif" font-size="88" fill="white" font-weight="bold">
+    Subdivisión
+  </text>
+  <text x="80" y="460" font-family="Arial, sans-serif" font-size="88" fill="white" font-weight="bold">
+    de Lotes
+  </text>
+  <text x="80" y="540" font-family="Arial, sans-serif" font-size="44" fill="white" opacity="0.95">
+    Dividí tu Terreno
+  </text>
+  
+  <!-- Íconos de características -->
+  <g transform="translate(80, 630)">
+    <text font-family="Arial, sans-serif" font-size="26" fill="white" opacity="0.9">
+      📏 Planos Aprobados   •   🏗️ Nuevas Partidas   •   ✅ Trámites Completos
+    </text>
+  </g>
+</svg>

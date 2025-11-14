@@ -1,17 +1,38 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
+import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 
 export function Header() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    element?.scrollIntoView({ behavior: "smooth" })
+  const pathname = usePathname()
+  const router = useRouter()
+  const isHome = pathname === '/'
+
+  const handleNavigation = (section: string) => {
+    if (isHome) {
+      // Si estamos en home, scroll directo
+      const element = document.getElementById(section)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      // Si estamos en otra página, ir a home con hash
+      router.push(`/#${section}`)
+      // Después de navegar, hacer scroll
+      setTimeout(() => {
+        const element = document.getElementById(section)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    }
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border">
+    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">GL</span>
           </div>
@@ -19,30 +40,30 @@ export function Header() {
             <h1 className="text-lg font-bold text-primary">GL_AGRIMENSURA</h1>
             <p className="text-xs text-muted-foreground">Gabriel Lucero</p>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           <button
-            onClick={() => scrollToSection("servicios")}
-            className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={() => handleNavigation("servicios")}
+            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
           >
             Servicios
           </button>
           <button
-            onClick={() => scrollToSection("galeria")}
-            className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={() => handleNavigation("galeria")}
+            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
           >
             Galería
           </button>
           <button
-            onClick={() => scrollToSection("sobre")}
-            className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={() => handleNavigation("sobre")}
+            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
           >
             Sobre Mí
           </button>
           <button
-            onClick={() => scrollToSection("contacto")}
-            className="text-sm font-medium hover:text-primary transition-colors"
+            onClick={() => handleNavigation("contacto")}
+            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
           >
             Contacto
           </button>
@@ -56,14 +77,27 @@ export function Header() {
             <Phone size={18} />
             <span>221-2230052</span>
           </a>
-          <Button onClick={() => scrollToSection("contacto")} className="bg-primary hover:bg-primary/90">
-            Contactar
+          <Button 
+            onClick={() => {
+              const whatsappUrl = `https://wa.me/5492214000000?text=${encodeURIComponent('Hola, necesito información sobre servicios de agrimensura')}`
+              window.open(whatsappUrl, '_blank')
+            }}
+            className="bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold"
+          >
+            Consultar WhatsApp
           </Button>
         </div>
 
         <div className="md:hidden">
-          <Button onClick={() => scrollToSection("contacto")} size="sm">
-            Contactar
+          <Button 
+            onClick={() => {
+              const whatsappUrl = `https://wa.me/5492214000000?text=${encodeURIComponent('Hola, necesito información sobre servicios de agrimensura')}`
+              window.open(whatsappUrl, '_blank')
+            }}
+            size="sm"
+            className="bg-[#25D366] hover:bg-[#20BA5A]"
+          >
+            WhatsApp
           </Button>
         </div>
       </div>

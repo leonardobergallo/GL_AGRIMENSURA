@@ -1,7 +1,13 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    element?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section className="relative bg-gradient-to-b from-primary/5 to-transparent pt-16 pb-24">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
@@ -17,10 +23,18 @@ export function Hero() {
             generación y precisión técnica garantizada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => scrollToSection("contacto")}
+            >
               Solicitar Presupuesto
             </Button>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => scrollToSection("servicios")}
+            >
               Ver Servicios
             </Button>
           </div>

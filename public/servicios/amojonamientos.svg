@@ -1,0 +1,51 @@
+<!-- Amojonamientos - Imagen con mojones y límites -->
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="amojoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo degradado -->
+  <rect width="1200" height="800" fill="url(#amojoGrad)"/>
+  
+  <!-- Ilustración de terreno con mojones -->
+  <g transform="translate(750, 320)" opacity="0.2">
+    <rect x="0" y="0" width="200" height="150" fill="none" stroke="white" stroke-width="4" stroke-dasharray="10,5"/>
+    <!-- Mojones en las esquinas -->
+    <circle cx="0" cy="0" r="12" fill="white"/>
+    <rect x="-8" y="-30" width="16" height="30" fill="white"/>
+    
+    <circle cx="200" cy="0" r="12" fill="white"/>
+    <rect x="192" y="-30" width="16" height="30" fill="white"/>
+    
+    <circle cx="0" cy="150" r="12" fill="white"/>
+    <rect x="-8" y="150" width="16" height="30" fill="white"/>
+    
+    <circle cx="200" cy="150" r="12" fill="white"/>
+    <rect x="192" y="150" width="16" height="30" fill="white"/>
+  </g>
+  
+  <!-- Elementos decorativos de límites -->
+  <line x1="150" y1="200" x2="350" y2="200" stroke="white" stroke-width="3" stroke-dasharray="8,4" opacity="0.15"/>
+  <line x1="150" y1="250" x2="150" y2="350" stroke="white" stroke-width="3" stroke-dasharray="8,4" opacity="0.15"/>
+  <circle cx="150" cy="200" r="8" fill="white" opacity="0.2"/>
+  <circle cx="350" cy="200" r="8" fill="white" opacity="0.2"/>
+  
+  <!-- Textos -->
+  <text x="80" y="400" font-family="Arial, sans-serif" font-size="88" fill="white" font-weight="bold">
+    Amojonamientos
+  </text>
+  <text x="80" y="500" font-family="Arial, sans-serif" font-size="44" fill="white" opacity="0.95">
+    Demarcación de Límites
+  </text>
+  
+  <!-- Íconos de características -->
+  <g transform="translate(80, 600)">
+    <text font-family="Arial, sans-serif" font-size="27" fill="white" opacity="0.9">
+      📍 Mojones Oficiales   •   🗺️ Límites Precisos   •   ⚖️ Normativa Catastral
+    </text>
+  </g>
+</svg>
