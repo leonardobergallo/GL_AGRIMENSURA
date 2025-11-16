@@ -48,13 +48,21 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <button
-            onClick={() => handleNavigation("servicios")}
-            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+        <nav className="hidden md:flex items-center gap-4">
+          <Button
+            onClick={() => handleNavigation("contacto")}
+            size="sm"
+            className="bg-primary hover:bg-primary/90 text-white"
           >
-            Servicios
-          </button>
+            Solicitar Presupuesto
+          </Button>
+          <Button
+            onClick={() => handleNavigation("servicios")}
+            size="sm"
+            variant="outline"
+          >
+            Ver Servicios
+          </Button>
           <button
             onClick={() => handleNavigation("galeria")}
             className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
@@ -94,14 +102,29 @@ export function Header() {
           </Button>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <Button
+            onClick={() => handleNavigation("contacto")}
+            size="sm"
+            className="bg-primary hover:bg-primary/90 text-white text-xs"
+          >
+            Presupuesto
+          </Button>
+          <Button
+            onClick={() => handleNavigation("servicios")}
+            size="sm"
+            variant="outline"
+            className="text-xs"
+          >
+            Servicios
+          </Button>
           <Button 
             onClick={() => {
               const whatsappUrl = `https://wa.me/5492214000000?text=${encodeURIComponent('Hola, necesito información sobre servicios de agrimensura')}`
               window.open(whatsappUrl, '_blank')
             }}
             size="sm"
-            className="bg-[#25D366] hover:bg-[#20BA5A]"
+            className="bg-[#25D366] hover:bg-[#20BA5A] text-xs"
           >
             WhatsApp
           </Button>
